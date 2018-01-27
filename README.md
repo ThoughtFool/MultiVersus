@@ -6,6 +6,10 @@ These wonderful and generous volunteers give thousands of hours of their time ev
 
 For more information about Global Game Jam click [here](https://globalgamejam.org/)
 
+## The game is hosted on GitHub Pages [here](https://buddyeorl.github.io/ggj2018/)
+
+<br>
+
 # The Project
 ## MultiVerse - You aren't alone. 
 ### MultiVerse is an 8-bit JavaScript game where you have one chance to interact with other dimensions. *What do you do?*
@@ -24,6 +28,21 @@ For more information about Global Game Jam click [here](https://globalgamejam.or
  - [Alex - @buddyeorl](https://github.com/buddyeorl)
 
 #### Special Thanks to [Melissa - @m-wolowicz](https://github.com/m-wolowicz), and [Frank - @fhern077](https://github.com/fhern077) for helping make this game into reality.
+
+
+# The Tech
+## The game was built with a variety of tools, some that we learned how to use in the course, others we learned on our own.
+
+- Adobe Photoshop (for 8-Bit Sprites and Graphics)
+- JavaScript ES6
+- Firebase Realtime DB
+- HTML5 Canvas
+- CSS3 Animations
+- GitHub Pages
+
+
+
+
 
 
 
