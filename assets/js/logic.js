@@ -1,5 +1,11 @@
 var itemPositionx =0;
 var itemPositiony =0;
+var bombLocations = [];
+var radius = (($(window).width())/100)*10;
+console.log(radius);
+var shadow = '-webkit-box-shadow: 0 0 4vw #ffffff ;';
+	
+
 
 // //********* placeholder canvas animations *********
 // function drawShape() {
@@ -135,13 +141,54 @@ var container = document.querySelector("#planet1");
 var planet2 = document.querySelector("#planet2");
 var planet3 = document.querySelector("#planet3");
 var planet4 = document.querySelector("#planet4");
+var detonate = document.querySelector("#detonate");
 var tester =  document.querySelector("#tester");
 tester.addEventListener("click", animatePlanet, false);
 container.addEventListener("click", getClickPosition, false);
 bombDeployer.addEventListener("click", deployBombs, false);
+missileDeployer.addEventListener("click", launchmissile, false);
+detonate.addEventListener("click", attack, false);
+
+
+function attack (e)
+{
+	console.log("x: " + itemPositionx + " y: "+itemPositiony)
+	console.log(bombLocations);
+	damageRadius(bombLocations);
+	console.log('All bombs were detonated');
+	$(".bomb" ).remove();
+	$(".missile" ).remove();
+	bombLocations=[];
+}
+
+function damageRadius(bombPosition)
+{
+for (var i=0;i<bombPosition.length;i++)
+{
+	console.log(Math.abs(bombPosition[i][0] - itemPositionx));
+	console.log(Math.abs(bombPosition[i][1] - itemPositionx));
+		if (Math.abs(bombPosition[i][0] - itemPositionx) <radius && Math.abs(bombPosition[i][1] - itemPositiony)< radius)
+		{
+			console.log("bomb "+ (i+1) + "Damage you " );
+		} else if (Math.abs(bombPosition[i][0] - itemPositionx) >(radius-1) && Math.abs(bombPosition[i][1] - itemPositiony)> (radius-1))
+		{
+			console.log("bomb "+ (i+1) + "Didn't damage you" );
+		} else
+		{
+			console.log("bomb "+ (i+1) + "Didn't damage you" );
+		}
+}
+}
+
+function launchmissile (e)
+{
+	bombLocations[bombLocations.length] = [itemPositionx,itemPositiony];
+	$("#planet1").append('<div class="missile" style="transform: translate3d('+itemPositionx+'px,' +itemPositiony+'px, 0px);" ></div>');	
+}
 
 function deployBombs (e)
 {	
+	bombLocations[bombLocations.length] = [itemPositionx,itemPositiony];
 	$("#planet1").append('<div class="bomb" style="transform: translate3d('+itemPositionx+'px,' +itemPositiony+'px, 0px);" ></div>');
 }
 
@@ -149,12 +196,12 @@ function animatePlanet (e){
 $("#planet2").addClass('planet2');
 $("#planet3").addClass('planet3');
 $("#planet4").addClass('planet4');
-console.log('click here');
-var value4 = "width: 15vw; height: 15vw; margin-top: -12.5vw; margin-left: -12.5vw; border: 15px rgb(255,10,45) solid;background-color:green; left:20%; top:20%; z-index: -6;";
+console.log('click here');	    
+var value4 = "width: 15vw; height: 15vw; margin-top: -12.5vw; margin-left: -12.5vw;background-color:green; left:20%; top:20%; z-index: -6;opacity: 0.4; filter: alpha(opacity=60);"+shadow+'"';
 planet4.setAttribute("style",value4);
-var value3 = "width: 20vw; height: 20vw; margin-top: -12.5vw; margin-left: -12.5vw; border: 15px rgb(255,10,45) solid;background-color:green; left:25%; top:25%; z-index: -5;";
+var value3 = "width: 20vw; height: 20vw; margin-top: -12.5vw; margin-left: -12.5vw; background-color:green; left:25%; top:25%; z-index: -5;opacity: 0.5; filter: alpha(opacity=60);"+shadow+'"';
 planet3.setAttribute("style",value3);
-var value2 = "width: 25vw; height: 25vw; margin-top: -12.5vw; margin-left: -12.5vw; border: 15px rgb(255,10,45) solid;background-color:green; left:30%; top:30%; z-index: -4;";
+var value2 = "width: 25vw; height: 25vw; margin-top: -12.5vw; margin-left: -12.5vw;background-color:green; left:30%; top:30%; z-index: -4;opacity: 0.6; filter: alpha(opacity=60);"+shadow+'"';
 planet2.setAttribute("style",value2);
 }
 
@@ -167,9 +214,9 @@ function getClickPosition(e){
 	var xPosition = e.clientX - parentPosition.x- (theUser .offsetWidth/2);
 	var yPosition = e.clientY - parentPosition.y-(theUser .offsetHeight/2);
 	itemPositionx =xPosition;
+	itemPositiony =yPosition;
 	console.log(xPosition);
 	console.log(yPosition);
-	itemPositiony =yPosition;
 	var translate3dValue = "translate3d(" + xPosition +"px,"+ yPosition + "px,0)";
 	theUser.style.transform = translate3dValue;
 

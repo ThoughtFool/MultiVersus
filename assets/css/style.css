@@ -10,7 +10,7 @@ body {
 	margin-top: -25vw;
 	margin-left: -25vw;
 	border-radius: 50%;
-	border: 15px #EDEDED solid;*/
+	/*border: 15px #EDEDED solid;*/*/
 	overflow:hidden;
 	background-image: url("../images/planet.png");
 	background-repeat: no-repeat;
@@ -20,6 +20,10 @@ body {
 	top: 50%;
 	left: 50%;
 	z-index: -1;
+	-webkit-animation-name: greenPulse;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-box-shadow: 0 0 4vw #ffffff ;
 }
 #planet2, #planet3, #planet4 {
 	width: 50vw;
@@ -27,7 +31,7 @@ body {
 	margin-top: -25vw;
 	margin-left: -25vw;
 	border-radius: 50%;
-	border: 15px #EDEDED solid;
+	/*border: 15px #EDEDED solid;*/
 	overflow:hidden;
 	background-image: url("../images/planet.png");
 	background-repeat: no-repeat;
@@ -37,22 +41,37 @@ body {
 	top: 50%;
 	left: 50%;
 	z-index: -2;
+	opacity: 0.4;
+	filter: alpha(opacity=40);
 }
 
 #mainPlayer {
-	width: 5vw;
-	height:5vw;
-	background-color: rgb(20, 20, 20);
-	border-radius: 50%;
-	border: 15px rgb(255,199,0) solid;
+	width: 4vw;
+	height:10vw;
+	background-image: url("../images/mainSprite/user01.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 	transform: translate3d(50px,50px, 0);
 	transition: transform.3s cubic-bezier(0, .64, .52, .24);
+	position: fixed; /* or absolute */
 	z-index: -1;
 }
 .bomb {
 	width: 5vw;
 	height: 5vw;
 	background-image: url("../images/weapons/bomb.png");
+	background-repeat: no-repeat;
+	transform: translate3d(50px,50px, 0);
+	background-size: 70%;
+	background-position: center;
+	position: fixed; /* or absolute */
+	z-index: -1;
+}
+
+.missile{
+	width: 5vw;
+	height: 7vw;
+	background-image: url("../images/weapons/missile.png");
 	background-repeat: no-repeat;
 	transform: translate3d(50px,50px, 0);
 	background-size: 70%;
@@ -97,21 +116,21 @@ body {
 		height: 50vw;
 		margin-top: -25vw;
 		margin-left: -25vw;
-		border: 15px rgb(255,199,0) solid;
     	background-color:blue; left:50%; top:50%;
     	z-index: -99;
+	    opacity: 0.6;
+  		filter: alpha(opacity=60);
     	}
     100% {
     	width: 15vw;
 		height: 15vw;
 		margin-top: -12.5vw;
 		margin-left: -12.5vw;
-		border: 15px rgb(255,199,0) solid;
     	background-color:green; left:20%; top:20%;
     	z-index: -6;
-/*        opacity: 0.6;
+	    opacity: 0.6;
   		filter: alpha(opacity=60);
-*/    	}
+   	}
 }
 
 @keyframes planet3 {
@@ -120,20 +139,20 @@ body {
 		height: 50vw;
 		margin-top: -25vw;
 		margin-left: -25vw;
-		border: 15px rgb(255,33,0) solid;
     	background-color:blue; left:50%; top:50%;
     	z-index: -99;
+    	opacity: 0.5;
+    	filter: alpha(opacity=50);
     	}
     100% {
     	width:20vw;
 		height: 20vw;
 		margin-top: -12.5vw;
 		margin-left: -12.5vw;
-		border: 15px rgb(255,33,0) solid;
     	background-color:green; left:25%; top:25%;
     	z-index: -5;
-/*    	opacity: 0.6;
-    	filter: alpha(opacity=60);*/
+    	opacity: 0.5;
+    	filter: alpha(opacity=50);
     	}
 }
 
@@ -143,19 +162,19 @@ body {
 		height: 50vw;
 		margin-top: -25vw;
 		margin-left: -25vw;
-		border: 15px rgb(255,10,45) solid;
     	background-color:blue; left:50%; top:50%;
     	z-index: -99;
+    	opacity: 0.4;
+    	filter: alpha(opacity=40);
     	}
     100% {
     	width: 25vw;
 		height: 25vw;
 		margin-top: -12.5vw;
 		margin-left: -12.5vw;
-		border: 15px rgb(255,10,45) solid;
     	background-color:green; left:30%; top:30%;
     	z-index: -4;
-/*    	opacity: 0.6;
-    	filter: alpha(opacity=60);*/
+		opacity: 0.4;
+    	filter: alpha(opacity=40);
 }
 
