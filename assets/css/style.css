@@ -101,6 +101,31 @@ body {
     animation-duration: 4s;
     animation-iteration-count: 1;
  }
+
+.planet2a {
+
+    animation-name: phaseplanet2;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+}
+
+.planet3a
+ {
+ 	animation-name: phaseplanet3;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+ }
+
+.planet4a
+ {
+ 	animation-name: phaseplanet4;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+ }
+
+
+
+
 /*@-webkit-keyframes example {
     0%   {background-color:red; left:20%; top:20%;}
     25%  {background-color:yellow; left:30%; top:030%;}
@@ -178,3 +203,66 @@ body {
     	filter: alpha(opacity=40);
 }
 
+
+
+@keyframes phaseplanet2 {
+	
+    100%  {
+    	width: 50vw;
+		height: 50vw;
+		margin-top: -25vw;
+		margin-left: -25vw;
+    	background-color:blue; left:50%; top:50%;
+    	z-index: -99;
+	    opacity: 0.6;
+  		filter: alpha(opacity=60);
+    	}
+
+}
+
+@keyframes phaseplanet3 {
+	    0% {
+    	width:20vw;
+		height: 20vw;
+		margin-top: -12.5vw;
+		margin-left: -12.5vw;
+    	background-color:green; left:25%; top:25%;
+    	z-index: -5;
+    	opacity: 0.5;
+    	filter: alpha(opacity=50);
+    	}
+    100%  {
+    	width: 50vw;
+		height: 50vw;
+		margin-top: -25vw;
+		margin-left: -25vw;
+    	background-color:blue; left:50%; top:50%;
+    	z-index: -99;
+    	opacity: 0.5;
+    	filter: alpha(opacity=50);
+    	}
+
+}
+
+@keyframes phaseplanet4 {
+	    0% {
+    	width: 25vw;
+		height: 25vw;
+		margin-top: -12.5vw;
+		margin-left: -12.5vw;
+    	background-color:green; left:30%; top:30%;
+    	z-index: -4;
+		opacity: 0.4;
+    	filter: alpha(opacity=40);
+}
+    100%  {
+    	width: 50vw;
+		height: 50vw;
+		margin-top: -25vw;
+		margin-left: -25vw;
+    	background-color:blue; left:50%; top:50%;
+    	z-index: -99;
+    	opacity: 0.4;
+    	filter: alpha(opacity=40);
+    	}
+}

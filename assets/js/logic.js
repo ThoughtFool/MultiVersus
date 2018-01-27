@@ -148,7 +148,7 @@ container.addEventListener("click", getClickPosition, false);
 bombDeployer.addEventListener("click", deployBombs, false);
 missileDeployer.addEventListener("click", launchmissile, false);
 detonate.addEventListener("click", attack, false);
-
+returnTester.addEventListener("click", phasePlanets, false);
 
 function attack (e)
 {
@@ -203,6 +203,25 @@ var value3 = "width: 20vw; height: 20vw; margin-top: -12.5vw; margin-left: -12.5
 planet3.setAttribute("style",value3);
 var value2 = "width: 25vw; height: 25vw; margin-top: -12.5vw; margin-left: -12.5vw;background-color:green; left:30%; top:30%; z-index: -4;opacity: 0.6; filter: alpha(opacity=60);"+shadow+'"';
 planet2.setAttribute("style",value2);
+}
+
+function phasePlanets()
+{
+$('#planet2').removeClass('planet2');
+$("#planet3").removeClass('planet3');
+$("#planet4").removeClass('planet4');	    
+planet4.setAttribute("style","");
+planet3.setAttribute("style","");
+planet2.setAttribute("style","");
+$('#planet2').addClass('planet2a');
+$("#planet3").addClass('planet3a');
+$("#planet4").addClass('planet4a');
+// var value4 = "width: 15vw; height: 15vw; margin-top: -12.5vw; margin-left: -12.5vw;background-color:green; left:20%; top:20%; z-index: -6;opacity: 0.4; filter: alpha(opacity=60);"+shadow+'"';
+// planet4.setAttribute("style",value4);
+// var value3 = "width: 20vw; height: 20vw; margin-top: -12.5vw; margin-left: -12.5vw; background-color:green; left:25%; top:25%; z-index: -5;opacity: 0.5; filter: alpha(opacity=60);"+shadow+'"';
+// planet3.setAttribute("style",value3);
+// var value2 = "width: 25vw; height: 25vw; margin-top: -12.5vw; margin-left: -12.5vw;background-color:green; left:30%; top:30%; z-index: -4;opacity: 0.6; filter: alpha(opacity=60);"+shadow+'"';
+// planet2.setAttribute("style",value2);
 }
 
 function getClickPosition(e){
