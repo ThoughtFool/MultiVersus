@@ -4,28 +4,11 @@ body {
 	margin: 0;
 	background-image: url("../images/universe.jpg");
 }
-#contentContainer {
+#planet1 {
 	width: 50vw;
 	height: 50vw;
 	margin-top: -25vw;
-		margin-left: -25vw;
-	border-radius: 50%;
-
-	border: 15px #EDEDED solid;*/
-	overflow:hidden;
-	background-image: url("../images/planet.png");
-	background-repeat: no-repeat;
-	background-size: 100%;
-	cursor:pointer;
-	position: fixed; /* or absolute */
-		top: 50%;
-		left: 50%;
-}
-#contentContainer2 {
-	width: 20vw;
-	height: 20vw;
-	margin-top: -12.5vw;
-	margin-left: -12.5vw;
+	margin-left: -25vw;
 	border-radius: 50%;
 	border: 15px #EDEDED solid;*/
 	overflow:hidden;
@@ -34,11 +17,29 @@ body {
 	background-size: 100%;
 	cursor:pointer;
 	position: fixed; /* or absolute */
-	top: 20%;
-	left: 20%;
+	top: 50%;
+	left: 50%;
+	z-index: -1;
+}
+#planet2, #planet3, #planet4 {
+	width: 50vw;
+	height: 50vw;
+	margin-top: -25vw;
+	margin-left: -25vw;
+	border-radius: 50%;
+	border: 15px #EDEDED solid;
+	overflow:hidden;
+	background-image: url("../images/planet.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	cursor:pointer;
+	position: fixed; /* or absolute */
+	top: 50%;
+	left: 50%;
+	z-index: -2;
 }
 
-#planet {
+#mainPlayer {
 	width: 5vw;
 	height:5vw;
 	background-color: rgb(20, 20, 20);
@@ -46,21 +47,115 @@ body {
 	border: 15px rgb(255,199,0) solid;
 	transform: translate3d(50px,50px, 0);
 	transition: transform.3s cubic-bezier(0, .64, .52, .24);
+	z-index: -1;
+}
+.bomb {
+	width: 5vw;
+	height: 5vw;
+	background-image: url("../images/weapons/bomb.png");
+	background-repeat: no-repeat;
+	transform: translate3d(50px,50px, 0);
+	background-size: 70%;
+	background-position: center;
+	position: fixed; /* or absolute */
+	z-index: -1;
 }
 
-@-webkit-keyframes #contentContainer2 {
-    0%   {background-color:red; left:0px; top:0px;}
-    25%  {background-color:yellow; left:200px; top:0px;}
-    50%  {background-color:blue; left:200px; top:200px;}
-    75%  {background-color:green; left:0px; top:200px;}
-    100% {background-color:red; left:0px; top:0px;}
+
+.planet2 {
+
+    animation-name: planet2;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
 }
+
+.planet3
+ {
+ 	animation-name: planet3;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+ }
+
+.planet4
+ {
+ 	animation-name: planet4;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+ }
+/*@-webkit-keyframes example {
+    0%   {background-color:red; left:20%; top:20%;}
+    25%  {background-color:yellow; left:30%; top:030%;}
+    50%  {background-color:blue; left:50%; top:50%;}
+    75%  {background-color:green; left:30%; top:30%;}
+    100% {background-color:red; left:20%; top:20%;}
+}*/
 
 /* Standard syntax */
-@keyframes #contentContainer2 {
-    0%   {background-color:red; left:0px; top:0px;}
-    25%  {background-color:yellow; left:200px; top:0px;}
-    50%  {background-color:blue; left:200px; top:200px;}
-    75%  {background-color:green; left:0px; top:200px;}
-    100% {background-color:red; left:0px; top:0px;}
+@keyframes planet2 {
+    0%  {
+    	width: 50vw;
+		height: 50vw;
+		margin-top: -25vw;
+		margin-left: -25vw;
+		border: 15px rgb(255,199,0) solid;
+    	background-color:blue; left:50%; top:50%;
+    	z-index: -99;
+    	}
+    100% {
+    	width: 15vw;
+		height: 15vw;
+		margin-top: -12.5vw;
+		margin-left: -12.5vw;
+		border: 15px rgb(255,199,0) solid;
+    	background-color:green; left:20%; top:20%;
+    	z-index: -6;
+/*        opacity: 0.6;
+  		filter: alpha(opacity=60);
+*/    	}
 }
+
+@keyframes planet3 {
+    0%  {
+    	width: 50vw;
+		height: 50vw;
+		margin-top: -25vw;
+		margin-left: -25vw;
+		border: 15px rgb(255,33,0) solid;
+    	background-color:blue; left:50%; top:50%;
+    	z-index: -99;
+    	}
+    100% {
+    	width:20vw;
+		height: 20vw;
+		margin-top: -12.5vw;
+		margin-left: -12.5vw;
+		border: 15px rgb(255,33,0) solid;
+    	background-color:green; left:25%; top:25%;
+    	z-index: -5;
+/*    	opacity: 0.6;
+    	filter: alpha(opacity=60);*/
+    	}
+}
+
+@keyframes planet4 {
+    0%  {
+    	width: 50vw;
+		height: 50vw;
+		margin-top: -25vw;
+		margin-left: -25vw;
+		border: 15px rgb(255,10,45) solid;
+    	background-color:blue; left:50%; top:50%;
+    	z-index: -99;
+    	}
+    100% {
+    	width: 25vw;
+		height: 25vw;
+		margin-top: -12.5vw;
+		margin-left: -12.5vw;
+		border: 15px rgb(255,10,45) solid;
+    	background-color:green; left:30%; top:30%;
+    	z-index: -4;
+/*    	opacity: 0.6;
+    	filter: alpha(opacity=60);*/
+}
+

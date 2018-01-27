@@ -1,3 +1,6 @@
+var itemPositionx =0;
+var itemPositiony =0;
+
 // //********* placeholder canvas animations *********
 // function drawShape() {
 // 	var myCanvas = document.getElementById("canvas");
@@ -13,7 +16,7 @@
 // var attack = health + damage;
 
 // //********* Attack/Threat (TYPES) *********
-// var weaponType = ["grenade", "tnt", "nuke", "bullet", "missle", "gun"];
+var weaponType = ["grenade", "tnt", "nuke", "bullet", "missile", "gun"];
 
 var threatType = {
 	natural: {
@@ -127,38 +130,67 @@ var threatType = {
 
 
 
-var thePlanet = document.querySelector("#planet");
-	var container = document.querySelector("#contentContainer");
+var theUser = document.querySelector("#mainPlayer");
+var container = document.querySelector("#planet1");
+var planet2 = document.querySelector("#planet2");
+var planet3 = document.querySelector("#planet3");
+var planet4 = document.querySelector("#planet4");
+var tester =  document.querySelector("#tester");
+tester.addEventListener("click", animatePlanet, false);
+container.addEventListener("click", getClickPosition, false);
+bombDeployer.addEventListener("click", deployBombs, false);
 
-	container.addEventListener("click", getClickPosition, false);
+function deployBombs (e)
+{	
+	$("#planet1").append('<div class="bomb" style="transform: translate3d('+itemPositionx+'px,' +itemPositiony+'px, 0px);" ></div>');
+}
 
-	function getClickPosition(e){
-		//var xPosition = e.clientX;
-		//var yPosition = e.clientY;
-		var parentPosition = getPosition(container)
-		// var xPosition = e.clientX - (thePlanet.offsetWidth/2);
-		// var yPosition = e.clientY - (thePlanet.offsetHeight/2);
-		var xPosition = e.clientX - parentPosition.x- (thePlanet.offsetWidth/2);
-		var yPosition = e.clientY - parentPosition.y-(thePlanet.offsetHeight/2);
-		var translate3dValue = "translate3d(" + xPosition +"px,"+ yPosition + "px,0)";
-		thePlanet.style.transform = translate3dValue;
+function animatePlanet (e){
+$("#planet2").addClass('planet2');
+$("#planet3").addClass('planet3');
+$("#planet4").addClass('planet4');
+console.log('click here');
+var value4 = "width: 15vw; height: 15vw; margin-top: -12.5vw; margin-left: -12.5vw; border: 15px rgb(255,10,45) solid;background-color:green; left:20%; top:20%; z-index: -6;";
+planet4.setAttribute("style",value4);
+var value3 = "width: 20vw; height: 20vw; margin-top: -12.5vw; margin-left: -12.5vw; border: 15px rgb(255,10,45) solid;background-color:green; left:25%; top:25%; z-index: -5;";
+planet3.setAttribute("style",value3);
+var value2 = "width: 25vw; height: 25vw; margin-top: -12.5vw; margin-left: -12.5vw; border: 15px rgb(255,10,45) solid;background-color:green; left:30%; top:30%; z-index: -4;";
+planet2.setAttribute("style",value2);
+}
 
-	}
+function getClickPosition(e){
+	//var xPosition = e.clientX;
+	//var yPosition = e.clientY;
+	var parentPosition = getPosition(container)
+	// var xPosition = e.clientX - (thePlanet.offsetWidth/2);
+	// var yPosition = e.clientY - (thePlanet.offsetHeight/2);
+	var xPosition = e.clientX - parentPosition.x- (theUser .offsetWidth/2);
+	var yPosition = e.clientY - parentPosition.y-(theUser .offsetHeight/2);
+	itemPositionx =xPosition;
+	console.log(xPosition);
+	console.log(yPosition);
+	itemPositiony =yPosition;
+	var translate3dValue = "translate3d(" + xPosition +"px,"+ yPosition + "px,0)";
+	theUser.style.transform = translate3dValue;
 
-	function getPosition(element)
+}
+
+function getPosition(element)
+{
+	var xPosition = 0;
+	var yPosition = 0;
+	while (element) 
 	{
-		var xPosition = 0;
-		var yPosition = 0;
-		while (element) 
-		{
-			xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
-			yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
-			element = element.offsetParent;
-		}
-		return {
-			x: xPosition,
-			y: yPosition
-		};
+		xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
+		yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
+		element = element.offsetParent;
 	}
+	return {
+		x: xPosition,
+		y: yPosition
+	};
+}
+
+
 
 
