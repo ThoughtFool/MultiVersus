@@ -11,8 +11,8 @@ For more information about Global Game Jam click [here](https://globalgamejam.or
 <br>
 
 # The Project
-## MultiVerse - You aren't alone. 
-### MultiVerse is an 8-bit JavaScript game where you have one chance to interact with other dimensions. *What do you do?*
+## MultiVersus - You aren't alone. 
+### MultiVersus is an 8-bit JavaScript game where you have one chance to interact with other dimensions. *What do you do?*
 
 ## Alpha Version
 ### Below is a screenshot of the Alpha version of the game so that you could get a general idea of how it looks. 
