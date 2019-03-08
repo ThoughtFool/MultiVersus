@@ -24,7 +24,7 @@ For more information about Global Game Jam click [here](https://globalgamejam.or
  - [Alex - @buddyeorl](https://github.com/buddyeorl)
  - [Mariela - @mariela2p](https://github.com/mariela2p)
  - [Ejike - @reyhenry38](https://github.com/reyhenry38)
- - [Charlie - @buddyeorl](https://github.com/buddyeorl)
+ - [Charlie - @ThoughtFool](https://github.com/ThoughtFool)
  - [Alex - @buddyeorl](https://github.com/buddyeorl)
 
 #### Special Thanks to [Melissa - @m-wolowicz](https://github.com/m-wolowicz), and [Frank - @fhern077](https://github.com/fhern077) for helping make this game into reality.
